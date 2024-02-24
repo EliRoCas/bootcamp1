@@ -1,4 +1,4 @@
-const express = routes('express');
+const express = require('express');
 const router = express.Router();
 const HouseSchema = require('../models/House');
 const multer = require('multer');

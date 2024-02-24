@@ -182,7 +182,7 @@ router.post('/upload/:id/user', upload.single('file'), (req, res) => {
         console.log(error)
         res.send({ 'status': 'success', 'message': 'Error actualizando el registro' })
     })
-}
+})
 
 module.exports = router
 
