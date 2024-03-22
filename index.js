@@ -37,7 +37,8 @@ io.on('connect', (socket) => {
         var payload = JSON.parse(data)
         console.log(payload)
         MessageSchema(payload).save().then((result) => {
-            socket.emit('message-receipt', { "message": "Mensaje almacenado" })
+            //Enviando el mensaje a todos los clientes conectados
+            socket.broadcast.emit('message-receipt', payload)
         }).catch((err) => {
             console.log({ "status": "error", "message": err.message })
         })
